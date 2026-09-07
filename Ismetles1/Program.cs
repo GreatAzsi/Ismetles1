@@ -42,5 +42,17 @@ internal class Program
             }
         }
         Console.WriteLine("A 30-nál nagyobb számok száma: " + count);
+
+        // 4.feladat
+        // Adja vissza egy új listában az összes negatív számot.
+        List<int> negativSzamok = new List<int>();
+        foreach (int i in szamok)
+        {
+            if (i < 0)
+            {
+                negativSzamok.Add(i);
+            }
+        }
+        Console.WriteLine("A negatív számok: " + string.Join(", ", negativSzamok));
     }
 }
