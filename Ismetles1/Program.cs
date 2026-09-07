@@ -31,5 +31,16 @@ internal class Program
         double atlag = (double)sum / szamok.Count;
         Console.WriteLine("A számok átlaga: " + atlag);
 
+        // 3. feladat
+        // Számolja meg és adja vissza,hogy hány darab 30-nál nagyobb szám található a listában.
+        int count = 0;
+        foreach (int i in szamok)
+        {
+            if (i > 30)
+            {
+                count++;
+            }
+        }
+        Console.WriteLine("A 30-nál nagyobb számok száma: " + count);
     }
 }
