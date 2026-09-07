@@ -54,5 +54,11 @@ internal class Program
             }
         }
         Console.WriteLine("A negatív számok: " + string.Join(", ", negativSzamok));
+
+        // 5.feladat
+        // Add vissza a listában lévő számok közül a három legnagyobbat (Linq-t már ajánlott használni)
+        // Ha a listában háromnál kevesebb szám található,akkor az összes rendelkezésre álló számot adja vissza.
+        List<int> haromLegnagyobb = szamok.OrderByDescending(x => x).Take(3).ToList();
+        Console.WriteLine("A három legnagyobb szám: " + string.Join(", ", haromLegnagyobb));
     }
 }
