@@ -208,6 +208,34 @@ namespace Ismetles1
             }
             return result;
         }
+        public static String OldestPlaneInSpecificType(List<Plane> Planes, List<PlaneType> PlaneTypes, string typeName)
+        {
+            List<Plane> SearchedPlanes = new();
+            int TypeId = 0;
+            foreach (PlaneType Type in PlaneTypes)
+            {
+                if (Type.TypeName == typeName)
+                {
+                    TypeId = Type.TypeId;
+                }
+            }
+            foreach (Plane Plane in Planes)
+            {
+                if (Plane.TypeId == TypeId)
+                {
+                    SearchedPlanes.Add(Plane);
+                }
+            }
+            Plane OldestPlane = SearchedPlanes[0];
+            foreach (Plane Plane in SearchedPlanes)
+            {
+                if (Plane.BuildYear < OldestPlane.BuildYear)
+                {
+                    OldestPlane = Plane;
+                }
+            }
+            return OldestPlane.PlaneName;
+        }
     }
 
 }

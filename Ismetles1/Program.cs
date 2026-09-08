@@ -200,3 +200,10 @@ Console.WriteLine("14----------------------------------------------");
 Plane largestCapacityPlane = Plane.LargestCapacityAboveLimit(Planes, 200);
 Console.WriteLine(largestCapacityPlane);
 
+Console.WriteLine("15----------------------------------------------");
+// 15. feladat
+// Készíts függvényt, amely paraméterként kap egy repülőgéptípust.
+// Az adott típushoz tartozó repülőgépek közül keresd meg a legrégebben gyártott repülőgépet.
+// Add vissza a repülőgép nevét.
+string OldestPlaneInSpecificType = PlaneType.OldestPlaneInSpecificType(Planes, PlaneTypes, "Commercial Airliner");
+Console.WriteLine(OldestPlaneInSpecificType);
