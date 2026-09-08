@@ -76,6 +76,23 @@ namespace Ismetles1
             }
             return SearchedPlanes;
         }
+        public static Dictionary<string, int> CountPlanesByType(List<Plane> Planes, List<PlaneType> PlaneTypes)
+        {
+            var result = new Dictionary<string, int>();
+            foreach (PlaneType type in PlaneTypes)
+            {
+                int count = 0;
+                foreach (Plane plane in Planes)
+                {
+                    if (plane.TypeId == type.TypeId)
+                    {
+                        count++;
+                    }
+                }
+                result[type.TypeName] = count;
+            }
+            return result;
+        }
     }
 
 }

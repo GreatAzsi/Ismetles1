@@ -105,3 +105,14 @@ foreach (Plane plane in searchedPlanes2)
     Console.WriteLine(plane.PlaneName);
 }
 
+Console.WriteLine("----------------------------------------------");
+// 6. feladat
+// Készíts statisztikát, amely megmondja, hogy típusonként hány repülőgép tartozik az adott típushoz.
+// Add vissza egy szótárban a típus nevét és a hozzá tartozó darabszámot.
+
+var stats = PlaneType.CountPlanesByType(Planes, PlaneTypes);
+foreach (var keyValue in stats)
+{
+    Console.WriteLine($"{keyValue.Key} -> {keyValue.Value}");
+}
+
