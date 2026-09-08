@@ -314,7 +314,24 @@ namespace Ismetles1
             }
             return PlaneNames;
         }
+        public static Dictionary<string, int> CountSeatsByType(List<Plane> Planes, List<PlaneType> PlaneTypes)
+        {
+            var result = new Dictionary<string, int>();
+            foreach (PlaneType type in PlaneTypes)
+            {
+                int SeatsCount = 0;
+                foreach (Plane plane in Planes)
+                {
+                    if (plane.TypeId == type.TypeId)
+                    {
+                        SeatsCount += plane.Capacity;
+                    }
+                }
+                result[type.TypeName] = SeatsCount;
+            }
+            return result;
 
+        }
     }
 }
 

@@ -253,3 +253,17 @@ foreach (string plane in searchedPlanes10)
 {
     Console.WriteLine(plane);
 }
+
+Console.WriteLine("20----------------------------------------------");
+// 20. feladat
+// Készíts függvényt, amely típusonként kiszámítja az összes férőhely számát.
+// Add vissza egy szótárban:
+// TypeName -> összes Capacity
+// Például:
+// "Személyszállító" -> 1250
+var stats4 = PlaneType.CountSeatsByType(Planes, PlaneTypes);
+foreach (var keyValue in stats4)
+{
+    Console.WriteLine($"{keyValue.Key} -> {keyValue.Value}");
+}
+
