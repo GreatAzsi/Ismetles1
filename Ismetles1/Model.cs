@@ -93,6 +93,23 @@ namespace Ismetles1
             }
             return result;
         }
+        public static Dictionary<string, int> MaxSpeedByType(List<Plane> Planes, List<PlaneType> PlaneTypes)
+        {
+            var result = new Dictionary<string, int>();
+            foreach (PlaneType type in PlaneTypes)
+            {
+                int maxSpeed = 0;
+                foreach (Plane plane in Planes)
+                {
+                    if (plane.TypeId == type.TypeId && plane.MaxSpeed > maxSpeed)
+                    {
+                        maxSpeed = plane.MaxSpeed;
+                    }
+                }
+                result[type.TypeName] = maxSpeed;
+            }
+            return result;
+        }
     }
 
 }

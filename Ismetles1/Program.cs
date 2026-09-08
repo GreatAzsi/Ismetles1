@@ -109,10 +109,18 @@ Console.WriteLine("----------------------------------------------");
 // 6. feladat
 // Készíts statisztikát, amely megmondja, hogy típusonként hány repülőgép tartozik az adott típushoz.
 // Add vissza egy szótárban a típus nevét és a hozzá tartozó darabszámot.
-
 var stats = PlaneType.CountPlanesByType(Planes, PlaneTypes);
 foreach (var keyValue in stats)
 {
     Console.WriteLine($"{keyValue.Key} -> {keyValue.Value}");
 }
 
+Console.WriteLine("----------------------------------------------");
+// 7. feladat
+// Készíts függvényt, amely megmondja,hogy az egyes típusokhoz tartozó repülőgépek közül mekkora a legnagyobb maximális sebesség.
+// Add vissza egy szótárban a típus nevét és a hozzá tartozó sebességértéket.
+var stats2 = PlaneType.MaxSpeedByType(Planes, PlaneTypes);
+foreach (var keyValue in stats2)
+{
+    Console.WriteLine($"{keyValue.Key} -> {keyValue.Value}");
+}
