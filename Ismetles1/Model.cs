@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Net.Mime;
 using System.Text;
+using System.Threading.Channels;
 
 namespace Ismetles1
 {
@@ -26,7 +27,7 @@ namespace Ismetles1
             BuildYear = buildYear;
             TypeId = typeId;
         }
-        public override string ToString() 
+        public override string ToString()
         {
             return $"PlaneId: {Planeid}, PlaneName: {PlaneName}, Capacity: {Capacity}, MaxSpeed: {MaxSpeed}, BuildYear: {BuildYear}, TypeId: {TypeId}";
         }
@@ -105,14 +106,15 @@ namespace Ismetles1
             List<Plane> SearchedPlanes = new();
             foreach (Plane Plane in Planes)
             {
-                if(Plane.Capacity > Limit)
+                if (Plane.Capacity > Limit)
                 {
                     SearchedPlanes.Add(Plane);
                 }
             }
             Plane LargestCapacity = SearchedPlanes[0];
-            foreach(Plane Plane in SearchedPlanes) {
-                if(Plane.Capacity > LargestCapacity.Capacity)
+            foreach (Plane Plane in SearchedPlanes)
+            {
+                if (Plane.Capacity > LargestCapacity.Capacity)
                 {
                     LargestCapacity = Plane;
                 }
@@ -137,7 +139,8 @@ namespace Ismetles1
             double averageCapacity = sumCapacity / SearchedPlanes.Count;
             return averageCapacity;
         }
-        public static List<string> PlaneNamesWhichAreContainText(List<Plane> Planes, string searchText) {
+        public static List<string> PlaneNamesWhichAreContainText(List<Plane> Planes, string searchText)
+        {
             List<string> SearchedPlaneNames = new List<string>();
             foreach (Plane Plane in Planes)
             {
@@ -148,6 +151,24 @@ namespace Ismetles1
             }
             SearchedPlaneNames.Sort();
             return SearchedPlaneNames;
+        }
+        public static List<string> PlaneNamesWhichStartWithText(List<Plane> Planes, string searchText1, string searchText2)
+        {
+            List<Plane> SearchedPlanes = new List<Plane>();
+            foreach (Plane Plane in Planes)
+            {
+                if (Plane.PlaneName.StartsWith(searchText1) || Plane.PlaneName.StartsWith(searchText2))
+                {
+                    SearchedPlanes.Add(Plane);
+                }
+            }
+            SearchedPlanes = SearchedPlanes.OrderByDescending(x => x.BuildYear).ToList();
+            List<string> PlaneNames = new List<string>();
+            foreach (Plane Plane in SearchedPlanes)
+            {
+                PlaneNames.Add(Plane.PlaneName);
+            }
+            return PlaneNames;
         }
     }
     public class PlaneType
@@ -217,8 +238,8 @@ namespace Ismetles1
             }
             return result;
         }
-        public static Dictionary<string,double> AverageSpeedByType(List<Plane> Planes, List<PlaneType> PlaneTypes) 
-        { 
+        public static Dictionary<string, double> AverageSpeedByType(List<Plane> Planes, List<PlaneType> PlaneTypes)
+        {
             var result = new Dictionary<string, double>();
             foreach (PlaneType type in PlaneTypes)
             {
@@ -266,8 +287,8 @@ namespace Ismetles1
             }
             return OldestPlane.PlaneName;
         }
+        
     }
-
 }
 
 

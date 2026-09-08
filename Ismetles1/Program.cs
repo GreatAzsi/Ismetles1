@@ -226,3 +226,21 @@ foreach(string plane in searchedPlanes8)
 {
     Console.WriteLine(plane);
 }
+
+Console.WriteLine("18----------------------------------------------");
+// 18. feladat
+// Készíts függvényt, amely paraméterként kap két szöveget.
+// A két szöveg egy-egy repülőgépnév kezdete legyen.
+// Add vissza azokat a repülőgépeket, amelyek neve az egyik vagy a másik paraméterként kapott szöveggel kezdődik.
+// Például:
+// "Airbus"
+// "Boeing"
+//
+//Rendezd őket gyártási év szerint csökkenő sorrendbe.
+List<string> searchedPlanes9 = Plane.PlaneNamesWhichStartWithText(Planes, "Airbus", "Boeing");
+foreach (string plane in searchedPlanes9)
+{
+    Console.WriteLine(plane);
+}
+
+
