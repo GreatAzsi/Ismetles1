@@ -123,6 +123,27 @@ namespace Ismetles1
             }
             return result;
         }
+        public static Dictionary<string,double > AverageSpeedByType(List<Plane> Planes, List<PlaneType> PlaneTypes) 
+        { 
+            var result = new Dictionary<string, double>();
+            foreach (PlaneType type in PlaneTypes)
+            {
+                int sumSpeed = 0;
+                double averageSpeed = 0;
+                int count = 0;
+                foreach(Plane plane in Planes)
+                {
+                    if (plane.TypeId == type.TypeId)
+                    {
+                        sumSpeed += plane.MaxSpeed;
+                        count++;
+                    }
+                    averageSpeed = sumSpeed / count;
+                }
+                result[type.TypeName] = averageSpeed;
+            }
+            return result;
+        }
     }
 
 }

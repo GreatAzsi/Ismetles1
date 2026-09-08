@@ -133,3 +133,13 @@ foreach (Plane plane in searchedPlanes3)
     {
     Console.WriteLine(plane.PlaneName);
 }
+
+Console.WriteLine("----------------------------------------------");
+// 9. feladat
+// Készíts függvényt, amely megmondja, hogy típusonként mennyi az átlagos sebesség.
+// Add vissza egy szótárban a típus nevét és a hozzá tartozó lebegőpontos értéket.
+var stats3 = PlaneType.AverageSpeedByType(Planes, PlaneTypes);
+foreach(var keyValue in stats3)
+{
+    Console.WriteLine($"{keyValue.Key} -> {keyValue.Value}");
+}
