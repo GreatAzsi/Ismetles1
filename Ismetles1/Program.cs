@@ -124,3 +124,12 @@ foreach (var keyValue in stats2)
 {
     Console.WriteLine($"{keyValue.Key} -> {keyValue.Value}");
 }
+
+Console.WriteLine("----------------------------------------------");
+// 8. feladat
+// Készíts függvényt, amely visszaadja azoknak a repülőgépeknek a neveit ABC-sorrendben, amelyek neve legalább 3 szóból áll.
+List<Plane> searchedPlanes3 = Plane.PlaneNamesWithMoreThan3WordsInABC(Planes);
+foreach (Plane plane in searchedPlanes3)
+    {
+    Console.WriteLine(plane.PlaneName);
+}

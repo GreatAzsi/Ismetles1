@@ -42,6 +42,19 @@ namespace Ismetles1
             }
             return SearchedPlanes;
         }
+        public static List<Plane> PlaneNamesWithMoreThan3WordsInABC(List<Plane> Planes)
+        {
+            List<Plane> SearchedPlanes = new();
+            foreach (Plane Plane in Planes)
+            {
+                if (Plane.PlaneName.Split(' ').Length >= 3)
+                {
+                    SearchedPlanes.Add(Plane);
+                }
+            }
+            SearchedPlanes.Sort((x, y) => x.PlaneName.CompareTo(y.PlaneName));
+            return SearchedPlanes;
+        }
     }
     public class PlaneType
     {
