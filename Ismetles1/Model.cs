@@ -119,6 +119,24 @@ namespace Ismetles1
             }
             return LargestCapacity;
         }
+        public static double AverageCapacityInGivenYear(List<Plane> Planes, int BuildYear)
+        {
+            List<Plane> SearchedPlanes = new();
+            foreach (Plane Plane in Planes)
+            {
+                if (Plane.BuildYear == BuildYear)
+                {
+                    SearchedPlanes.Add(Plane);
+                }
+            }
+            double sumCapacity = 0;
+            foreach (Plane Plane in SearchedPlanes)
+            {
+                sumCapacity += Plane.Capacity;
+            }
+            double averageCapacity = sumCapacity / SearchedPlanes.Count;
+            return averageCapacity;
+        }
     }
     public class PlaneType
     {

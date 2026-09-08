@@ -207,3 +207,10 @@ Console.WriteLine("15----------------------------------------------");
 // Add vissza a repülőgép nevét.
 string OldestPlaneInSpecificType = PlaneType.OldestPlaneInSpecificType(Planes, PlaneTypes, "Commercial Airliner");
 Console.WriteLine(OldestPlaneInSpecificType);
+
+Console.WriteLine("16----------------------------------------------");
+// 16. feladat
+// Készíts függvényt, amely paraméterként kap egy évszámot.
+// Számítsd ki azoknak a repülőgépeknek az átlagos kapacitását, amelyek a paraméterként kapott évben vagy azután készültek.
+double averageCapacity = Plane.AverageCapacityInGivenYear(Planes, 2013);
+Console.WriteLine(averageCapacity);
