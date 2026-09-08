@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Net.Mime;
 using System.Text;
 
 namespace Ismetles1
 {
     internal class Model
     {
-        
+
     }
     public class Plane
     {
@@ -36,41 +37,26 @@ namespace Ismetles1
             TypeName = typeName;
         }
     }
-    public class FileManager
-    {
-        public static (List<Plane>, List<PlaneType>) Readfile(string path)
+    public List<Plane> SearchFromTypeName(List<Plane> Planes, List<PlaneType> PlaneTypes, string typeName)
         {
-            try
+            List<Plane> SearchedPlanes = new();
+            int TypeId = 0;
+            foreach (PlaneType Type in PlaneTypes)
             {
-                List<Plane> All = new();
-                List<PlaneType> All2 = new();
-                List<PlaneType> All2Distinct = new();
-
-                foreach (string line in File.ReadAllLines(path).Skip(1))
+                if (Type.TypeName == typeName)
                 {
-
-                    string[] temp = line.Split(";");
-
-                    if (temp.Length == 7)
-                    {
-                        All.Add(new Plane(int.Parse(temp[0]), temp[1], int.Parse(temp[2]), int.Parse(temp[3]), int.Parse(temp[4]), int.Parse(temp[5])));
-
-                        All2.Add(new PlaneType(int.Parse(temp[5]), temp[6]));
-                    }
+                    TypeId = Type.TypeId;
                 }
-                All2Distinct = All2.GroupBy(PlaneType => PlaneType.TypeId).Select(group => group.First()).ToList();
-                return (All, All2Distinct);
             }
-            catch (Exception ex)
+            foreach (Plane Plane in Planes)
             {
-                Console.WriteLine(ex.Message);
-                List<Plane> All = new();
-                List<PlaneType> All2Distinct = new();
-                return (All, All2Distinct);
+                if (Plane.TypeId == TypeId)
+                {
+                    SearchedPlanes.Add(Plane);
+                }
             }
+            return SearchedPlanes;
         }
     }
-   
-
 }
 
