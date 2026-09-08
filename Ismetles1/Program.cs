@@ -267,3 +267,16 @@ foreach (var keyValue in stats4)
     Console.WriteLine($"{keyValue.Key} -> {keyValue.Value}");
 }
 
+Console.WriteLine("21----------------------------------------------");
+// 21. feladat
+// Készíts függvényt, amely típusonként megkeresi a legnagyobb kapacitású repülőgépet.
+// Add vissza minden típushoz a legnagyobb kapacitású repülőgép nevét.
+//
+// A feladat megoldásánál használj GroupBy-t,
+var stats5 = PlaneType.LargestCapacityByType(Planes, PlaneTypes);
+foreach (var keyValue in stats5)
+{
+    Console.WriteLine($"{keyValue.Key} -> {keyValue.Value}");
+}
+
+

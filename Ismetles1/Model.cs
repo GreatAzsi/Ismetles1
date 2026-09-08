@@ -332,6 +332,27 @@ namespace Ismetles1
             return result;
 
         }
+        public static Dictionary<string, Plane> LargestCapacityByType(List<Plane> Planes, List<PlaneType> PlaneTypes)
+        {
+            var result = new Dictionary<string, Plane>();
+            foreach (PlaneType type in PlaneTypes)
+            {
+                Plane LargestCapacity = Planes[0];
+                foreach (Plane plane in Planes)
+                {
+                    if (plane.TypeId == type.TypeId)
+                    {
+                        if (plane.Capacity > LargestCapacity.Capacity)
+                        {
+                            LargestCapacity = plane;
+                        }
+                    }
+                }
+                result[type.TypeName] = LargestCapacity;
+            }
+            return result;
+
+        }
     }
 }
 
