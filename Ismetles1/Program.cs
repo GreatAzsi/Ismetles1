@@ -336,3 +336,13 @@ foreach (string description in planeDescriptions)
 {
     Console.WriteLine(description);
 }
+
+Console.WriteLine("27----------------------------------------------");
+// 27. feladat
+// Készíts függvényt, amely megvizsgálja, hogy van-e olyan repülőgép az adatok között, amely:
+// - 2015 után készült,
+// - legalább 300 fő kapacitású,
+// - és legalább 900 km/h maximális sebességű.
+//
+// A függvény bool típusú értékkel térjen vissza.
+Console.WriteLine(Plane.IsThereNewPlaneWithSpeedAndCapacity(Planes));

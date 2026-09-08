@@ -224,6 +224,18 @@ namespace Ismetles1
             OrderedTexts = Texts.OrderBy(x => x).ToList();
             return OrderedTexts;
         }
+        public static bool IsThereNewPlaneWithSpeedAndCapacity(List<Plane> Planes) 
+        {
+            foreach (Plane Plane in Planes)
+            {
+                if (Plane.BuildYear > 2015 && Plane.MaxSpeed >= 900 && Plane.Capacity >= 300)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
     }
     public class PlaneType
     {
