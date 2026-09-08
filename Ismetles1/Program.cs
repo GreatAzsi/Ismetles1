@@ -94,3 +94,14 @@ foreach (Plane plane in searchedPlanes)
 }
 
 
+Console.WriteLine("----------------------------------------------");
+// 2/5. feladat
+// Készíts függvényt, amely paraméterként kap egy évszámot.
+// Add vissza azoknak a repülőgépeknek a neveit, amelyek a paraméterként megkapott évben már léteztek.
+List<Plane> searchedPlanes2 = new List<Plane>();
+searchedPlanes2 = Plane.SearchFromPlaneDate(Planes, 2000);
+foreach (Plane plane in searchedPlanes2)
+{
+    Console.WriteLine(plane.PlaneName);
+}
+

@@ -30,7 +30,18 @@ namespace Ismetles1
         {
             return $"PlaneId: {Planeid}, PlaneName: {PlaneName}, Capacity: {Capacity}, MaxSpeed: {MaxSpeed}, BuildYear: {BuildYear}, TypeId: {TypeId}";
         }
-        
+        public static List<Plane> SearchFromPlaneDate(List<Plane> Planes, int BuildYear)
+        {
+            List<Plane> SearchedPlanes = new();
+            foreach (Plane Plane in Planes)
+            {
+                if (Plane.BuildYear <= BuildYear)
+                {
+                    SearchedPlanes.Add(Plane);
+                }
+            }
+            return SearchedPlanes;
+        }
     }
     public class PlaneType
     {
