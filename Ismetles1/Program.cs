@@ -302,7 +302,21 @@ Console.WriteLine("24----------------------------------------------");
 // Készíts függvényt, amely megkeresi azokat a repülőgéptípusokat,  amelyekhez tartozó repülőgépek átlagos maximális sebessége  nagyobb 700 km/h-nál.
 // Add vissza csak a típusok neveit, az átlagos sebességük szerint csökkenő sorrendben.
 List<string> fastPlaneTypes = PlaneType.FastPlaneTypes(Planes, PlaneTypes);
-foreach (var planeType in fastPlaneTypes)
+foreach(string planeType in fastPlaneTypes)
 {
     Console.WriteLine(planeType);
+}
+
+Console.WriteLine("25----------------------------------------------");
+// 25. feladat
+// Készíts függvényt, amely visszaadja az első 3 olyan repülőgépet,
+// amelyek:
+//
+// - legalább 200 fő kapacitásúak,
+// - 1990 után készültek,
+// - maximális sebességük legalább 800 km/h.
+List<Plane> searchedPlanes11 = Plane.NewFastPlanesWithSeats(Planes);
+foreach(Plane plane in searchedPlanes11)
+{
+    Console.WriteLine(plane);
 }

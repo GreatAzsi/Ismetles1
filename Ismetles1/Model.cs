@@ -200,6 +200,19 @@ namespace Ismetles1
             }
             return result;
         }
+        public static List<Plane> NewFastPlanesWithSeats(List<Plane> Planes)
+        {
+            List<Plane> SearchedPlanes = new List<Plane>();
+            foreach (Plane Plane in Planes)
+            {
+                if (Plane.MaxSpeed > 800 && Plane.Capacity > 200 && Plane.BuildYear > 1990)
+                {
+                    SearchedPlanes.Add(Plane);
+                }
+            }
+            SearchedPlanes = SearchedPlanes.Take(3).ToList();
+            return SearchedPlanes;
+        }
     }
     public class PlaneType
     {
