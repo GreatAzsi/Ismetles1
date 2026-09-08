@@ -87,6 +87,19 @@ namespace Ismetles1
             SearchedPlanes.Sort((x, y) => x.PlaneName.CompareTo(y.PlaneName));
             return SearchedPlanes;
         }
+        public static List<Plane> DateAndMinSpeed(List<Plane> Planes, int BuildYear, int MinSpeed)
+        {
+            List<Plane> SearchedPlanes = new List<Plane>();
+            foreach (Plane Plane in Planes)
+            {
+                if (Plane.BuildYear > BuildYear && Plane.MaxSpeed >= MinSpeed)
+                {
+                    SearchedPlanes.Add(Plane);
+                }
+            }
+            List<Plane> SearchedPlanesOrdered = SearchedPlanes.OrderByDescending(p => p.MaxSpeed).ToList();
+            return SearchedPlanesOrdered;
+        }
     }
     public class PlaneType
     {

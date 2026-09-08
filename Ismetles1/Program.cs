@@ -180,3 +180,14 @@ foreach(Plane plane in searchedPlanes6)
 {
     Console.WriteLine(plane);
 }
+
+Console.WriteLine("13----------------------------------------------");
+// 13. feladat
+// Készíts függvényt, amely paraméterként kap egy évszámot és egy minimum maximális sebességet.
+// Add vissza azoknak a repülőgépeknek a neveit, amelyek a paraméterként kapott év után készültek, és maximális sebességük legalább akkora, mint a paraméterként kapott sebesség.
+// Az eredményt MaxSpeed szerint csökkenő sorrendbe rendezd.
+List<Plane> searchedPlanes7 = Plane.DateAndMinSpeed(Planes, 2000, 800);
+foreach(Plane plane in searchedPlanes7)
+{
+    Console.WriteLine(plane);
+}
