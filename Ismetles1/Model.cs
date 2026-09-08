@@ -6,6 +6,7 @@ namespace Ismetles1
 {
     internal class Model
     {
+        
     }
     public class Plane
     {
@@ -63,10 +64,13 @@ namespace Ismetles1
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
-                return null;
+                List<Plane> All = new();
+                List<PlaneType> All2Distinct = new();
+                return (All, All2Distinct);
             }
         }
     }
+   
 
 }
 

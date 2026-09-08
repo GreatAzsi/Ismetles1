@@ -60,5 +60,21 @@ internal class Program
         // Ha a listában háromnál kevesebb szám található,akkor az összes rendelkezésre álló számot adja vissza.
         List<int> haromLegnagyobb = szamok.OrderByDescending(x => x).Take(3).ToList();
         Console.WriteLine("A három legnagyobb szám: " + string.Join(", ", haromLegnagyobb));
+
+        // 2/3. feladat
+        // Készíts konstruktort, amelyben meghívod a filebeolvasásra szolgáló függvényt.
+
+        var result = FileManager.Readfile("planes.txt");
+        List<Plane> Planes = result.Item1;
+        List<PlaneType> PlaneTypes = result.Item2;
+        
+        foreach (Plane plane in Planes)
+        {
+            Console.WriteLine(plane.PlaneName);
+        }
+        foreach (PlaneType planetype in PlaneTypes)
+        {
+            Console.WriteLine(planetype.TypeName);
+        }
     }
 }
