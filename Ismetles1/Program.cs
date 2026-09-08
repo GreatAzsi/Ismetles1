@@ -65,7 +65,7 @@ Console.WriteLine("----------------------------------------------");
 List<int> haromLegnagyobb = szamok.OrderByDescending(x => x).Take(3).ToList();
 Console.WriteLine("A három legnagyobb szám: " + string.Join(", ", haromLegnagyobb));
 
-Console.WriteLine("----------------------------------------------");
+Console.WriteLine("3----------------------------------------------");
 // 2/3. feladat
 // Készíts konstruktort, amelyben meghívod a filebeolvasásra szolgáló függvényt.
 var result = FileManager.Readfile("planes.txt");
@@ -82,7 +82,7 @@ foreach (PlaneType planetype in PlaneTypes)
 }
 
 
-Console.WriteLine("----------------------------------------------");
+Console.WriteLine("4----------------------------------------------");
 // 2/4. feladat
 // Készíts függvényt, amely paraméterként kap egy repülőgéptípust.
 // Add vissza azoknak a repülőgépeknek a neveit, amelyek az adott típushoz tartoznak.
@@ -94,7 +94,7 @@ foreach (Plane plane in searchedPlanes)
 }
 
 
-Console.WriteLine("----------------------------------------------");
+Console.WriteLine("5----------------------------------------------");
 // 2/5. feladat
 // Készíts függvényt, amely paraméterként kap egy évszámot.
 // Add vissza azoknak a repülőgépeknek a neveit, amelyek a paraméterként megkapott évben már léteztek.
@@ -105,7 +105,7 @@ foreach (Plane plane in searchedPlanes2)
     Console.WriteLine(plane.PlaneName);
 }
 
-Console.WriteLine("----------------------------------------------");
+Console.WriteLine("6----------------------------------------------");
 // 6. feladat
 // Készíts statisztikát, amely megmondja, hogy típusonként hány repülőgép tartozik az adott típushoz.
 // Add vissza egy szótárban a típus nevét és a hozzá tartozó darabszámot.
@@ -115,7 +115,7 @@ foreach (var keyValue in stats)
     Console.WriteLine($"{keyValue.Key} -> {keyValue.Value}");
 }
 
-Console.WriteLine("----------------------------------------------");
+Console.WriteLine("7----------------------------------------------");
 // 7. feladat
 // Készíts függvényt, amely megmondja,hogy az egyes típusokhoz tartozó repülőgépek közül mekkora a legnagyobb maximális sebesség.
 // Add vissza egy szótárban a típus nevét és a hozzá tartozó sebességértéket.
@@ -125,7 +125,7 @@ foreach (var keyValue in stats2)
     Console.WriteLine($"{keyValue.Key} -> {keyValue.Value}");
 }
 
-Console.WriteLine("----------------------------------------------");
+Console.WriteLine("8----------------------------------------------");
 // 8. feladat
 // Készíts függvényt, amely visszaadja azoknak a repülőgépeknek a neveit ABC-sorrendben, amelyek neve legalább 3 szóból áll.
 List<Plane> searchedPlanes3 = Plane.PlaneNamesWithMoreThan3WordsInABC(Planes);
@@ -134,7 +134,7 @@ foreach (Plane plane in searchedPlanes3)
     Console.WriteLine(plane.PlaneName);
 }
 
-Console.WriteLine("----------------------------------------------");
+Console.WriteLine("9----------------------------------------------");
 // 9. feladat
 // Készíts függvényt, amely megmondja, hogy típusonként mennyi az átlagos sebesség.
 // Add vissza egy szótárban a típus nevét és a hozzá tartozó lebegőpontos értéket.
@@ -143,3 +143,17 @@ foreach(var keyValue in stats3)
 {
     Console.WriteLine($"{keyValue.Key} -> {keyValue.Value}");
 }
+
+Console.WriteLine("10----------------------------------------------");
+// 10. feladat
+// Készíts függvényt, amely paraméterként kap egy minimum kapacitást.
+// Add vissza azoknak a repülőgépeknek a neveit, amelyek kapacitása legalább akkora, mint a paraméterként kapott érték.
+// Az eredményt rendezd kapacitás szerint növekvő sorrendbe.
+List<string> searchedPlanes4 = Plane.SearchFromCapacity(Planes, 200);
+foreach(string plane in searchedPlanes4)
+{
+    Console.WriteLine(plane);
+}
+
+
+

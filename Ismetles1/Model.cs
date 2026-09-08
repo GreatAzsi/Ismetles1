@@ -55,6 +55,19 @@ namespace Ismetles1
             SearchedPlanes.Sort((x, y) => x.PlaneName.CompareTo(y.PlaneName));
             return SearchedPlanes;
         }
+        public static List<String> SearchFromCapacity(List<Plane> Planes, int parameter)
+        {
+            List<String> SearchedPlanes = new();
+            foreach (Plane Plane in Planes) {
+                if (Plane.Capacity >= parameter)
+                {
+                    SearchedPlanes.Add(Plane.PlaneName);
+                }
+            }
+            SearchedPlanes.Sort();
+            return SearchedPlanes;
+        }
+        
     }
     public class PlaneType
     {
