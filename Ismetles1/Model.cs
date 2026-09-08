@@ -213,6 +213,17 @@ namespace Ismetles1
             SearchedPlanes = SearchedPlanes.Take(3).ToList();
             return SearchedPlanes;
         }
+        public static List<string> TextFromPlaneData(List<Plane> Planes)
+        {
+            List<string> Texts = new List<string>();
+            foreach (Plane Plane in Planes)
+            {
+                Texts.Add($"{Plane.PlaneName} - {Plane.Capacity} fő - {Plane.MaxSpeed} km/h");
+            }
+            List<string> OrderedTexts = new List<string>();
+            OrderedTexts = Texts.OrderBy(x => x).ToList();
+            return OrderedTexts;
+        }
     }
     public class PlaneType
     {

@@ -320,3 +320,19 @@ foreach(Plane plane in searchedPlanes11)
 {
     Console.WriteLine(plane);
 }
+
+Console.WriteLine("26----------------------------------------------");
+// 26. feladat
+// Készíts függvényt, amely minden repülőgépből egy szöveges adatot készít
+// Select használatával.
+//
+// A visszaadott lista elemei ilyen formájúak legyenek:
+//
+// "Airbus A350 - 350 fő - 945 km/h"
+//
+// A listát a repülőgépek neve szerint ABC-sorrendben add vissza.
+List<string> planeDescriptions = Plane.TextFromPlaneData(Planes);
+foreach (string description in planeDescriptions)
+{
+    Console.WriteLine(description);
+}
