@@ -243,4 +243,13 @@ foreach (string plane in searchedPlanes9)
     Console.WriteLine(plane);
 }
 
-
+Console.WriteLine("19----------------------------------------------");
+// 19. feladat
+// Készíts függvényt, amely paraméterként kap egy repülőgéptípust és egy minimum sebességet.
+// Add vissza az adott típushoz tartozó olyan repülőgépek neveit, amelyek maximális sebessége nagyobb, mint a paraméterként kapott minimum sebesség.
+// Az eredményt MaxSpeed szerint csökkenő sorrendbe rendezd.
+List<string> searchedPlanes10 = PlaneType.PlaneNamesWithTypeAndMinSpeed(Planes, PlaneTypes, "Commercial Airliner", 800);
+foreach (string plane in searchedPlanes10)
+{
+    Console.WriteLine(plane);
+}

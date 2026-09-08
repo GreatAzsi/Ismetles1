@@ -287,7 +287,34 @@ namespace Ismetles1
             }
             return OldestPlane.PlaneName;
         }
-        
+        public static List<string> PlaneNamesWithTypeAndMinSpeed(List<Plane> Planes, List<PlaneType> PlaneTypes, string typeName, int minSpeed)
+        {
+            List<Plane> SearchedPlanes = new();
+            int TypeId = 0;
+            foreach (PlaneType Type in PlaneTypes)
+            {
+                if (Type.TypeName == typeName)
+                {
+                    TypeId = Type.TypeId;
+                }
+            }
+            foreach (Plane Plane in Planes)
+            {
+                if (Plane.TypeId == TypeId && Plane.MaxSpeed >= minSpeed)
+                {
+                    SearchedPlanes.Add(Plane);
+                }
+            }
+            List<Plane> OrderedSearchedPlanes = SearchedPlanes.OrderByDescending(p => p.MaxSpeed).ToList();
+            List<string> PlaneNames = new();
+
+            foreach (Plane Plane in OrderedSearchedPlanes)
+            {
+                PlaneNames.Add(Plane.PlaneName);
+            }
+            return PlaneNames;
+        }
+
     }
 }
 
