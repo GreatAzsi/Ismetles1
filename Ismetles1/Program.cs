@@ -191,3 +191,12 @@ foreach(Plane plane in searchedPlanes7)
 {
     Console.WriteLine(plane);
 }
+
+Console.WriteLine("14----------------------------------------------");
+// 14. feladat
+// Készíts függvényt, amely paraméterként kap egy minimum kapacitást.
+// A legalább ekkora kapacitású repülőgépek közül keresd meg a legnagyobb kapacitásút.
+// Add vissza a repülőgép nevét.
+Plane largestCapacityPlane = Plane.LargestCapacityAboveLimit(Planes, 200);
+Console.WriteLine(largestCapacityPlane);
+

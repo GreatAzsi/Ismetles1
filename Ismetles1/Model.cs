@@ -100,6 +100,25 @@ namespace Ismetles1
             List<Plane> SearchedPlanesOrdered = SearchedPlanes.OrderByDescending(p => p.MaxSpeed).ToList();
             return SearchedPlanesOrdered;
         }
+        public static Plane LargestCapacityAboveLimit(List<Plane> Planes, int Limit)
+        {
+            List<Plane> SearchedPlanes = new();
+            foreach (Plane Plane in Planes)
+            {
+                if(Plane.Capacity > Limit)
+                {
+                    SearchedPlanes.Add(Plane);
+                }
+            }
+            Plane LargestCapacity = SearchedPlanes[0];
+            foreach(Plane Plane in SearchedPlanes) {
+                if(Plane.Capacity > LargestCapacity.Capacity)
+                {
+                    LargestCapacity = Plane;
+                }
+            }
+            return LargestCapacity;
+        }
     }
     public class PlaneType
     {
