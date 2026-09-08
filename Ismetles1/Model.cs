@@ -137,6 +137,18 @@ namespace Ismetles1
             double averageCapacity = sumCapacity / SearchedPlanes.Count;
             return averageCapacity;
         }
+        public static List<string> PlaneNamesWhichAreContainText(List<Plane> Planes, string searchText) {
+            List<string> SearchedPlaneNames = new List<string>();
+            foreach (Plane Plane in Planes)
+            {
+                if (Plane.PlaneName.Contains(searchText))
+                {
+                    SearchedPlaneNames.Add(Plane.PlaneName);
+                }
+            }
+            SearchedPlaneNames.Sort();
+            return SearchedPlaneNames;
+        }
     }
     public class PlaneType
     {

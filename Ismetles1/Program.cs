@@ -214,3 +214,15 @@ Console.WriteLine("16----------------------------------------------");
 // Számítsd ki azoknak a repülőgépeknek az átlagos kapacitását, amelyek a paraméterként kapott évben vagy azután készültek.
 double averageCapacity = Plane.AverageCapacityInGivenYear(Planes, 2013);
 Console.WriteLine(averageCapacity);
+
+Console.WriteLine("17----------------------------------------------");
+// 17. feladat
+// Készíts függvényt, amely paraméterként kap egy szövegrészletet.
+// Add vissza azoknak a repülőgépeknek a neveit, amelyek nevében szerepel a paraméterként kapott szöveg.
+// A keresés során ne számítson,hogy kis- vagy nagybetűkkel adták meg a keresett kifejezést.
+// Az eredményt ABC-sorrendben add vissza.
+List<string> searchedPlanes8 = Plane.PlaneNamesWhichAreContainText(Planes, "Air");
+foreach(string plane in searchedPlanes8)
+{
+    Console.WriteLine(plane);
+}
