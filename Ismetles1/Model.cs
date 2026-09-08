@@ -382,6 +382,24 @@ namespace Ismetles1
             }
             return result;
         }
+        public static List<string> FastPlaneTypes(List<Plane> Planes, List<PlaneType> PlaneTypes)
+        {
+            var result = new List<(string TypeName, double AvgSpeed)>();
+
+            foreach (var type in PlaneTypes)
+            {
+                var planesOfType = Planes.Where(p => p.TypeId == type.TypeId).ToList();
+
+                double avg = planesOfType.Average(p => p.MaxSpeed);
+                if (avg > 700)
+                    result.Add((type.TypeName, avg));
+            }
+
+            return result
+                .OrderByDescending(x => x.AvgSpeed)
+                .Select(x => x.TypeName)
+                .ToList();
+        }
     }
 }
 

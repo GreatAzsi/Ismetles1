@@ -296,3 +296,13 @@ foreach (var keyValue in stats6)
 {
     Console.WriteLine($"{keyValue.Key} -> {keyValue.Value}");
 }
+
+Console.WriteLine("24----------------------------------------------");
+// 24. feladat
+// Készíts függvényt, amely megkeresi azokat a repülőgéptípusokat,  amelyekhez tartozó repülőgépek átlagos maximális sebessége  nagyobb 700 km/h-nál.
+// Add vissza csak a típusok neveit, az átlagos sebességük szerint csökkenő sorrendben.
+List<string> fastPlaneTypes = PlaneType.FastPlaneTypes(Planes, PlaneTypes);
+foreach (var planeType in fastPlaneTypes)
+{
+    Console.WriteLine(planeType);
+}
