@@ -183,6 +183,23 @@ namespace Ismetles1
             SearchedPlanes = SearchedPlanes.OrderByDescending(x => x.BuildYear).Take(3).ToList();
             return SearchedPlanes;
         }
+        public static Dictionary<string, int> CountPlanesByTypeAndYear(List<Plane> Planes, List<PlaneType> PlaneTypes, int year)
+        {
+            var result = new Dictionary<string, int>();
+            foreach (PlaneType type in PlaneTypes)
+            {
+                int count = 0;
+                foreach (Plane plane in Planes)
+                {
+                    if (plane.TypeId == type.TypeId && plane.BuildYear > year)
+                    {
+                        count++;
+                    }
+                }
+                result[type.TypeName] = count;
+            }
+            return result;
+        }
     }
     public class PlaneType
     {

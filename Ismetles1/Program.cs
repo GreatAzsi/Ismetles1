@@ -284,3 +284,15 @@ Console.WriteLine("22----------------------------------------------");
 // Készíts függvényt, amely visszaadja a 3 legújabb olyan repülőgépet, amely legalább 150 fő befogadására képes.
 List<Plane> newestPlanes = Plane.PlanesWithAbove150People(Planes);
 foreach (var plane in newestPlanes) {  Console.WriteLine(plane); }
+
+Console.WriteLine("23----------------------------------------------");
+// 23. feladat
+// Készíts függvényt, amely paraméterként kap egy évszámot.
+// Számold meg típusonként, hogy hány olyan repülőgép van, amely a megadott év után készült.
+// Add vissza egy szótárban:
+// TypeName -> darabszám.
+var stats6 = Plane.CountPlanesByTypeAndYear(Planes, PlaneTypes, 2000);
+foreach (var keyValue in stats6)
+{
+    Console.WriteLine($"{keyValue.Key} -> {keyValue.Value}");
+}
