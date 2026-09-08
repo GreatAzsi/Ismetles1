@@ -74,7 +74,19 @@ namespace Ismetles1
             SearchedPlanes = Planes.OrderByDescending(p => p.MaxSpeed).Take(parameter).ToList();
             return SearchedPlanes;
         }
-
+        public static List<Plane> CapacityBetweenTwoParameters(List<Plane> Planes, int minCapacity, int maxCapacity)
+        {
+            List<Plane> SearchedPlanes = new List<Plane>();
+            foreach (Plane Plane in Planes)
+            {
+                if (Plane.Capacity >= minCapacity && Plane.Capacity <= maxCapacity)
+                {
+                    SearchedPlanes.Add(Plane);
+                }
+            }
+            SearchedPlanes.Sort((x, y) => x.PlaneName.CompareTo(y.PlaneName));
+            return SearchedPlanes;
+        }
     }
     public class PlaneType
     {

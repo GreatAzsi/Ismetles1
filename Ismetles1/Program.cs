@@ -170,3 +170,13 @@ foreach(Plane plane in searchedPlanes5)
     Console.WriteLine(plane);
 }
 
+Console.WriteLine("12----------------------------------------------");
+// 12. feladat
+// Készíts függvényt, amely paraméterként kap egy minimum és egy maximum kapacitást.
+// Add vissza azoknak a repülőgépeknek a neveit, amelyek kapacitása a két megadott érték közé esik.
+// Az eredményt rendezd ABC-sorrendbe.
+List<Plane> searchedPlanes6 = Plane.CapacityBetweenTwoParameters(Planes, 100, 200);
+foreach(Plane plane in searchedPlanes6)
+{
+    Console.WriteLine(plane);
+}
