@@ -1,4 +1,8 @@
-﻿using Ismetles1;
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using Ismetles1;
 using System.Diagnostics.CodeAnalysis;
 
 // Bevezetés
@@ -10,11 +14,13 @@ foreach (int i in szamok)
     Console.WriteLine(i);
 }
 
+Console.WriteLine("----------------------------------------------");
 // 1. feladat
 // Adja vissza a listában lévő legnagyobb számot
 int max = szamok.Max();
 Console.WriteLine("A legnagyobb szám: " + max);
 
+Console.WriteLine("----------------------------------------------");
 // 2. feladat
 // Számítsa ki és adja vissza a listában található számok átlagát.
 // Figyelj arra, hogy az eredmény lebegőpontos szám legyen.
@@ -26,6 +32,7 @@ foreach (int i in szamok)
 double atlag = (double)sum / szamok.Count;
 Console.WriteLine("A számok átlaga: " + atlag);
 
+Console.WriteLine("----------------------------------------------");
 // 3. feladat
 // Számolja meg és adja vissza,hogy hány darab 30-nál nagyobb szám található a listában.
 int count = 0;
@@ -38,6 +45,7 @@ foreach (int i in szamok)
 }
 Console.WriteLine("A 30-nál nagyobb számok száma: " + count);
 
+Console.WriteLine("----------------------------------------------");
 // 4.feladat
 // Adja vissza egy új listában az összes negatív számot.
 List<int> negativSzamok = new List<int>();
@@ -50,12 +58,14 @@ foreach (int i in szamok)
 }
 Console.WriteLine("A negatív számok: " + string.Join(", ", negativSzamok));
 
+Console.WriteLine("----------------------------------------------");
 // 5.feladat
 // Add vissza a listában lévő számok közül a három legnagyobbat (Linq-t már ajánlott használni)
 // Ha a listában háromnál kevesebb szám található,akkor az összes rendelkezésre álló számot adja vissza.
 List<int> haromLegnagyobb = szamok.OrderByDescending(x => x).Take(3).ToList();
 Console.WriteLine("A három legnagyobb szám: " + string.Join(", ", haromLegnagyobb));
 
+Console.WriteLine("----------------------------------------------");
 // 2/3. feladat
 // Készíts konstruktort, amelyben meghívod a filebeolvasásra szolgáló függvényt.
 var result = FileManager.Readfile("planes.txt");
@@ -71,7 +81,16 @@ foreach (PlaneType planetype in PlaneTypes)
     Console.WriteLine(planetype.TypeName);
 }
 
+
+Console.WriteLine("----------------------------------------------");
 // 2/4. feladat
 // Készíts függvényt, amely paraméterként kap egy repülőgéptípust.
 // Add vissza azoknak a repülőgépeknek a neveit, amelyek az adott típushoz tartoznak.
-List<Plane> searchedPlanes = SearchFromTypeName(Planes, PlaneTypes, "Commercial Airliner");
+List<Plane> searchedPlanes = new List<Plane>();
+searchedPlanes = PlaneType.SearchFromTypeName(Planes, PlaneTypes, "Commercial Airliner");
+foreach (Plane plane in searchedPlanes)
+{
+    Console.WriteLine(plane.PlaneName);
+}
+
+

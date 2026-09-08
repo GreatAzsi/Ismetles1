@@ -26,6 +26,11 @@ namespace Ismetles1
             BuildYear = buildYear;
             TypeId = typeId;
         }
+        public override string ToString() 
+        {
+            return $"PlaneId: {Planeid}, PlaneName: {PlaneName}, Capacity: {Capacity}, MaxSpeed: {MaxSpeed}, BuildYear: {BuildYear}, TypeId: {TypeId}";
+        }
+        
     }
     public class PlaneType
     {
@@ -36,8 +41,11 @@ namespace Ismetles1
             TypeId = typeId;
             TypeName = typeName;
         }
-    }
-    public List<Plane> SearchFromTypeName(List<Plane> Planes, List<PlaneType> PlaneTypes, string typeName)
+        public override string ToString()
+        {
+            return $"TypeId: {TypeId}, TypeName: {TypeName}";
+        }
+        public static List<Plane> SearchFromTypeName(List<Plane> Planes, List<PlaneType> PlaneTypes, string typeName)
         {
             List<Plane> SearchedPlanes = new();
             int TypeId = 0;
@@ -58,5 +66,8 @@ namespace Ismetles1
             return SearchedPlanes;
         }
     }
+
 }
+    
+
 
