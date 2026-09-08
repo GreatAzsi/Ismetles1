@@ -279,4 +279,8 @@ foreach (var keyValue in stats5)
     Console.WriteLine($"{keyValue.Key} -> {keyValue.Value}");
 }
 
-
+Console.WriteLine("22----------------------------------------------");
+// 22. feladat
+// Készíts függvényt, amely visszaadja a 3 legújabb olyan repülőgépet, amely legalább 150 fő befogadására képes.
+List<Plane> newestPlanes = Plane.PlanesWithAbove150People(Planes);
+foreach (var plane in newestPlanes) {  Console.WriteLine(plane); }

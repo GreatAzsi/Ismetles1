@@ -170,6 +170,19 @@ namespace Ismetles1
             }
             return PlaneNames;
         }
+        public static List<Plane> PlanesWithAbove150People(List<Plane> Planes)
+        {
+            List<Plane> SearchedPlanes = new List<Plane>();
+            foreach (Plane Plane in Planes)
+            {
+                if (Plane.Capacity > 150)
+                {
+                    SearchedPlanes.Add(Plane);
+                }
+            }
+            SearchedPlanes = SearchedPlanes.OrderByDescending(x => x.BuildYear).Take(3).ToList();
+            return SearchedPlanes;
+        }
     }
     public class PlaneType
     {
@@ -351,7 +364,6 @@ namespace Ismetles1
                 result[type.TypeName] = LargestCapacity;
             }
             return result;
-
         }
     }
 }
