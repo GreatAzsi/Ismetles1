@@ -58,7 +58,8 @@ namespace Ismetles1
         public static List<String> SearchFromCapacity(List<Plane> Planes, int parameter)
         {
             List<String> SearchedPlanes = new();
-            foreach (Plane Plane in Planes) {
+            foreach (Plane Plane in Planes)
+            {
                 if (Plane.Capacity >= parameter)
                 {
                     SearchedPlanes.Add(Plane.PlaneName);
@@ -67,7 +68,13 @@ namespace Ismetles1
             SearchedPlanes.Sort();
             return SearchedPlanes;
         }
-        
+        public static List<Plane> SortBySpeedAndParameter(List<Plane> Planes, int parameter)
+        {
+            List<Plane> SearchedPlanes = new List<Plane>();
+            SearchedPlanes = Planes.OrderByDescending(p => p.MaxSpeed).Take(parameter).ToList();
+            return SearchedPlanes;
+        }
+
     }
     public class PlaneType
     {

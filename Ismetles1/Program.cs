@@ -155,5 +155,18 @@ foreach(string plane in searchedPlanes4)
     Console.WriteLine(plane);
 }
 
-
+Console.WriteLine("11----------------------------------------------");
+// 11. feladat
+// Készíts függvényt, amely paraméterként kap egy darabszámot.
+// Add vissza a megadott darabszámú leggyorsabb repülőgép nevét.
+// A repülőgépeket MaxSpeed alapján rendezd csökkenő sorrendbe.
+//
+// Például:
+// ha a paraméter értéke 5,
+// akkor az 5 leggyorsabb repülőgép nevét add vissza.
+List<Plane> searchedPlanes5 = Plane.SortBySpeedAndParameter(Planes, 5);
+foreach(Plane plane in searchedPlanes5)
+{
+    Console.WriteLine(plane);
+}
 
